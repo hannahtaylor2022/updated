@@ -1,0 +1,36 @@
+package Denver.src.Cart;
+
+import java.util.ArrayList;
+import Denver.src.Sauce.sauce;
+
+@Entity
+public class Cart {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private ArrayList<Sauce> sauces = new ArrayList<Sauce>();
+    private double preTaxTotal;
+    private double tax;
+    private double total;
+
+    public Cart() {
+    }
+
+    // this constructor is to seed in sample data
+    public Cart(ArrayList<Sauce> sauces) {
+        this.sauces = sauces;
+    }
+
+    public long getId() {return id;}
+
+    public ArrayList<Sauce> getSauces() {return sauces;}
+
+    public void addToSauces(Sauce sauce) {this.sauces.add(sauce);}
+
+    public double getPreTaxTotal() {return preTaxTotal;}
+
+    public double getTax() {return preTaxTotal * 0.075;}
+
+    public double getTotal() {return preTaxTotal + preTaxTotal * 0.075;}
+}

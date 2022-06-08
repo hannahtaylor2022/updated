@@ -1,0 +1,12 @@
+package Denver.src;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class cartController {
+    @GetMapping("/cart")
+    public String cart() {
+        return "Welcome to the cart";
+    }
+}

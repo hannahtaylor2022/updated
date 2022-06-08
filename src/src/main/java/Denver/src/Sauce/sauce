@@ -1,0 +1,52 @@
+package Denver.src.Sauce;
+
+import java.util.ArrayList;
+import java.util.String;
+import Denver.src.Sauce.sauce;
+
+@Entity
+public class Sauce {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
+    private String desciption;
+    private double price;
+    private int quanitity;
+    private String imageURL;
+
+    public Sauce() {
+    }
+
+    // this constructor is to seed in sample data
+    public Sauce(String name, String description, double price, int quantity, String imageURL) {
+        this.name = name;
+        this.description = desciption;
+        this.price = price;
+        this.quanitity = quantity;
+        this.imageURL = imageURL;
+    }
+
+    public long getId() {return id;}
+
+    public String getName() {return name;}
+
+    public void setName(String name) {this.name = name;}
+
+    public String getDescription() {return desciption;}
+
+    public void setDescription(String desciption) {this.desciption = desciption;}
+
+    public double getPrice() {return price;}
+
+    public void setPrice(Double price) {this.price = price;}
+
+    public int getQuantity() {return quanitity;}
+
+    public void setQuantity(int quanitity) {this.quanitity = quantity;}
+
+    public String getImageURL() {return imageURL;}
+
+    public void setImageURL(String imageURL) {this.imageURL = imageURL;}
+}
