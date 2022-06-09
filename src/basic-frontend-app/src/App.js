@@ -1,6 +1,8 @@
+// import React, {Component} from 'react';
+import logo from './logo.svg';
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import {Routes, Route, Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
 
 function App() {
   return (
@@ -24,31 +26,18 @@ function Browse() {
 
   let [sauces, setSauces] = useState([]);
 
-  const data = {
-    "list": [
-      {"id": 1, "name": "Hello"},
-      {"id": 2, "name": "Hi"}
-    ]
-  }
-  
-
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/ditto`).then((res) => res.json())
-    .then((data) => {setSauces(data.abilities)});
+    fetch('/api/test')
+            .then(response => response.text())
+            .then((data) => {setSauces(data)});
   }, [sauces]);
 
+  console.log(sauces);
   return (
     <div>
-      {sauces.map((sauce) => (
-        <p>{sauce.slot}</p>
-      ))}
-      
+      <p>{sauces}</p>
     </div>
   )
-}
-
-function getList() {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/ditto`).then(data => data.json());
 }
 
 function Details() {
